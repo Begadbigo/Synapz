@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Synapz - Dashboard</title>
+  <!-- Modern Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">SYNAPZ</div>
+        <!-- Mobile close button -->
+        <button class="mobile-close" id="mobile-close" aria-label="Close menu">&times;</button>
+      </div>
+      <nav class="sidebar-nav">
+        <ul>
+          <li><a href="#" class="nav-item active" aria-current="page">Dashboard</a></li>
+          <li><a href="#" class="nav-item">Materials</a></li>
+          <li><a href="#" class="nav-item">Flashcards</a></li>
+          <li><a href="#" class="nav-item">Quizzes</a></li>
+          <li><a href="#" class="nav-item">Mind Maps</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content Wrapper -->
+    <div class="main-wrapper">
+      <!-- Top Header -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <!-- Mobile menu toggle -->
+          <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+          <h1 class="page-title">Dashboard</h1>
+        </div>
+        <div class="profile-area">
+          <span class="profile-name">Alex Student</span>
+          <div class="profile-avatar">AS</div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="content">
+        <!-- Welcome Section -->
+        <section class="welcome-section">
+          <div class="welcome-text">
+            <h2>Welcome back, Alex 👋</h2>
+            <p>Ready to keep learning? Pick up where you left off or add new study material.</p>
+          </div>
+          <button id="upload-material-btn" class="btn-primary">
+            + Upload Material
+          </button>
+        </section>
+        
+        <!-- Upload Toast / Message (hidden by default) -->
+        <div id="upload-message" class="upload-message hidden" role="alert">
+          <p><strong>Demo Mode:</strong> Actual file uploading will be implemented in a future update.</p>
+        </div>
+
+        <!-- Recent Materials -->
+        <section class="recent-materials-section">
+          <h3>Recent Materials</h3>
+          <div class="materials-grid" id="materials-grid">
+            <!-- Cards will be injected by main.js -->
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
