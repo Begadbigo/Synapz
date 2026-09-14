@@ -76,6 +76,41 @@
             <!-- Cards will be injected by main.js -->
           </div>
         </section>
+
+        <!-- Interactive Flashcards View -->
+        <section class="flashcards-section" class="flashcards-section" style="display: none;">
+          <div class="flashcards-container">
+            <div class="flashcard-header">
+              <span class="card-counter" id="card-counter">Card 1 of 5</span>
+            </div>
+
+            <!-- Flip Card Container -->
+            <div class="flashcard-wrapper" id="flashcard-wrapper">
+              <div class="flashcard-inner" id="flashcard-inner">
+                <!-- Front Face -->
+                <div class="flashcard-face flashcard-front">
+                  <span class="card-type-tag">Question</span>
+                  <p class="card-text" id="card-text">What is Newton's 2nd law?</p>
+                  <button class="reveal-btn" id="btn-reveal">Reveal Answer</button>
+                </div>
+                <!-- Back Face -->
+                <div class="flashcard-face flashcard-back">
+                  <span class="card-type-tag">Answer</span>
+                  <p class="card-text" id="card-answer">F = ma</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Progress Indicator Dots -->
+            <div class="progress-dots" id="progress-dots"></div>
+
+            <!-- Controls -->
+            <div class="flashcard-controls">
+              <button id="prev-card-btn" class="btn-nav" disabled>&larr; Previous</button>
+              <button id="next-card-btn" class="btn-nav">Next &rarr;</button>
+            </div>
+          </div>
+        </section>
       </main>
     </div>
   </div>
