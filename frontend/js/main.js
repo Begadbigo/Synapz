@@ -91,12 +91,13 @@ function setupInteractions() {
     });
   }
   
-  // Upload button is now handled by setupUploadModal
+  // Upload btn is now handled by setupUploadModal
 }
 
 // Preserve existing backend call pattern for future reference
 // The backend runs on a different port than the frontend during local
 // development, so we call it directly using its full address.
+
 const BACKEND_URL = "http://127.0.0.1:8000";
 
 async function callBackend(path) {
@@ -113,28 +114,25 @@ function setupUploadModal() {
   const uploadBtn = document.getElementById("upload-material-btn");
   const modal = document.getElementById("upload-modal");
   const closeBtn = document.getElementById("close-modal-btn");
-  
   const dropZone = document.getElementById("drop-zone");
   const fileInput = document.getElementById("file-input");
   const dropZoneContent = document.getElementById("drop-zone-content");
   const fileDisplay = document.getElementById("file-display");
   const fileNameDisplay = document.getElementById("selected-file-name");
   const removeFileBtn = document.getElementById("remove-file-btn");
-  
   const notesInput = document.getElementById("notes-input");
   const submitBtn = document.getElementById("submit-material-btn");
   const validationMessage = document.getElementById("validation-message");
-  
+
   let selectedFile = null;
 
-  // Modal open/close
   if (uploadBtn && modal) {
     uploadBtn.addEventListener("click", () => {
       modal.classList.remove("hidden");
       modal.setAttribute("aria-hidden", "false");
     });
   }
-
+  
   const closeModal = () => {
     if (!modal) return;
     modal.classList.add("hidden");
@@ -149,14 +147,13 @@ function setupUploadModal() {
   if (modal) {
     modal.addEventListener("click", (e) => {
       if (e.target === modal) {
-        closeModal();
+        closeModal;
       }
     });
   }
 
   if (!dropZone) return;
 
-  // Drag and Drop
   ["dragenter", "dragover", "dragleave", "drop"].forEach(eventName => {
     dropZone.addEventListener(eventName, preventDefaults, false);
   });
@@ -184,7 +181,6 @@ function setupUploadModal() {
     handleFiles(files);
   }, false);
 
-  // Browse files click
   dropZone.addEventListener("click", (e) => {
     if (e.target !== removeFileBtn && !removeFileBtn.contains(e.target)) {
       fileInput.click();
@@ -208,6 +204,7 @@ function setupUploadModal() {
     dropZoneContent.classList.add("hidden");
     dropZoneContent.style.display = "none";
     fileDisplay.classList.remove("hidden");
+
   }
 
   function resetFile() {
@@ -216,6 +213,7 @@ function setupUploadModal() {
     fileDisplay.classList.add("hidden");
     dropZoneContent.classList.remove("hidden");
     dropZoneContent.style.display = "flex";
+
   }
 
   removeFileBtn.addEventListener("click", (e) => {
@@ -238,7 +236,6 @@ function setupUploadModal() {
     submitBtn.querySelector(".btn-loader").classList.add("hidden");
   }
 
-  // Submit and Validation
   submitBtn.addEventListener("click", () => {
     const hasFile = selectedFile !== null;
     const hasNotes = notesInput.value.trim().length > 0;
@@ -248,30 +245,29 @@ function setupUploadModal() {
       return;
     }
 
-    // Success State - Loading
     submitBtn.disabled = true;
     submitBtn.querySelector(".btn-text").textContent = "Processing...";
     submitBtn.querySelector(".btn-loader").classList.remove("hidden");
 
-    // Simulate Network Request
-    setTimeout(() => {
-      closeModal();
-      
-      // Show success toast (using the existing one for demo)
+    setTimeout (() => {
+      closeModal;
       const uploadMessage = document.getElementById("upload-message");
       if (uploadMessage) {
         uploadMessage.innerHTML = "<p><strong>Success!</strong> Material uploaded successfully.</p>";
         uploadMessage.classList.remove("hidden");
-        setTimeout(() => {
+        setTimeout (() => {
           uploadMessage.classList.add("hidden");
-          // Reset original message
           setTimeout(() => {
-             uploadMessage.innerHTML = "<p><strong>Demo Mode:</strong> Actual file uploading will be implemented in a future update.</p>";
+            uploadMessage.innerHTML = "<p><strong>Demo Mode:</strong> Actual file uploading will be implemented in the future.</p>";
           }, 300);
         }, 4000);
       }
+      
     }, 1500);
+
   });
+
+
 }
 
 // Initialize Dashboard when DOM is ready
