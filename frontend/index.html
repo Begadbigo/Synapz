@@ -16,8 +16,8 @@
     <aside class="sidebar" id="sidebar">
       <div class="sidebar-header">
         <div class="logo">SYNAPZ</div>
-        <!-- Mobile close button -->
-        <button class="mobile-close" id="mobile-close" aria-label="Close menu">&times;</button>
+        <!-- Mobile close btn -->
+        <btn class="mobile-close" id="mobile-close" aria-label="Close menu">&times;</btn>
       </div>
       <nav class="sidebar-nav">
         <ul>
@@ -36,13 +36,13 @@
       <header class="topbar">
         <div class="topbar-left">
           <!-- Mobile menu toggle -->
-          <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu">
+          <btn class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <line x1="3" y1="12" x2="21" y2="12"></line>
               <line x1="3" y1="6" x2="21" y2="6"></line>
               <line x1="3" y1="18" x2="21" y2="18"></line>
             </svg>
-          </button>
+          </btn>
           <h1 class="page-title">Dashboard</h1>
         </div>
         <div class="profile-area">
@@ -59,9 +59,9 @@
             <h2>Welcome back, Alex 👋</h2>
             <p>Ready to keep learning? Pick up where you left off or add new study material.</p>
           </div>
-          <button id="upload-material-btn" class="btn-primary">
+          <btn id="upload-material-btn" class="btn-primary">
             + Upload Material
-          </button>
+          </btn>
         </section>
         
         <!-- Upload Toast / Message (hidden by default) -->
@@ -91,7 +91,7 @@
                 <div class="flashcard-face flashcard-front">
                   <span class="card-type-tag">Question</span>
                   <p class="card-text" id="card-text">What is Newton's 2nd law?</p>
-                  <button class="reveal-btn" id="btn-reveal">Reveal Answer</button>
+                  <btn class="reveal-btn" id="btn-reveal">Reveal Answer</btn>
                 </div>
                 <!-- Back Face -->
                 <div class="flashcard-face flashcard-back">
@@ -106,8 +106,8 @@
 
             <!-- Controls -->
             <div class="flashcard-controls">
-              <button id="prev-card-btn" class="btn-nav" disabled>&larr; Previous</button>
-              <button id="next-card-btn" class="btn-nav">Next &rarr;</button>
+              <btn id="prev-card-btn" class="btn-nav" disabled>&larr; Previous</btn>
+              <btn id="next-card-btn" class="btn-nav">Next &rarr;</btn>
             </div>
           </div>
         </section>
@@ -119,7 +119,7 @@
   <div class="modal-content" role ="dialog" aria-labelledby="modal-title">
     <div class="modal-header">
       <h3 id="modal-title">Add Study Material</h3>
-      <button id="close-modal-button" class="close-button" aria-label="Close modal">&times;</button>
+      <btn id="close-modal-btn" class="close-btn" aria-label="Close modal">&times;</btn>
     </div>
     <div class="modal-body">
       <div id="drop-zone" class="drop-zone">
@@ -142,7 +142,7 @@
             </svg>
             <span id="selected-file-name" class="file-name">filename.pdf</span>
           </div>
-          <button id="remove-file-button" class="remove-button" aria-label="Remove file">&times;</button>
+          <btn id="remove-file-btn" class="remove-btn" aria-label="Remove file">&times;</btn>
         </div>
       </div>
       <div class="divider">
@@ -156,10 +156,10 @@
       Please provide a file or paste your notes.
     </div>
     <div class="modal-footer">
-      <button id="submit-material-button" class="button-primary w-full submit-button">
-        <span class="button-text">Process Material</span>
-        <span class="button-loader hidden"></span>
-      </button>
+      <btn id="submit-material-btn" class="btn-primary w-full submit-btn">
+        <span class="btn-text">Process Material</span>
+        <span class="btn-loader hidden"></span>
+      </btn>
     </div>
   </div>
 </div>
